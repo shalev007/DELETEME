@@ -1,7 +1,7 @@
 resources:
   - kind: repository
     selector:
-      query: 'true'
+      query: "true"
     port:
       entity:
         mappings:
@@ -14,17 +14,17 @@ resources:
             language: .language
   - kind: pull-request
     selector:
-      query: 'true'
+      query: "true"
     port:
       entity:
         mappings:
           identifier: .head.repo.name + (.id|tostring)
-          title: 'PR - '+.title
+          title: PR - + .title
           blueprint: '"githubPullRequest"'
           properties:
             creator: .user.login
-            assignees: '[.assignees[].login]'
-            reviewers: '[.requested_reviewers[].login]'
+            assignees: "[.assignees[].login]"
+            reviewers: "[.requested_reviewers[].login]"
             status: .status
             closedAt: .closed_at
             updatedAt: .updated_at
