@@ -19,7 +19,7 @@ resources:
       entity:
         mappings:
           identifier: .head.repo.name + (.id|tostring)
-          title: PR - + .title
+          title: .title + " FROM GTIHUB"
           blueprint: '"githubPullRequest"'
           properties:
             creator: .user.login
